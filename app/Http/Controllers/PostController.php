@@ -11,7 +11,9 @@ class PostController extends Controller
     {
         $posts = Post::all();
 
-        return view('articles',compact('posts'));
+        return view('articles',[
+            'posts'=> $posts
+        ]);
     }
 
     public function show($id)
@@ -37,10 +39,6 @@ class PostController extends Controller
             'title' => $request->title,
             'content' => $contenu
         ]);
-
-
-
-
 
     }
 
